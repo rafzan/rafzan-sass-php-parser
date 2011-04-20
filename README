@@ -1,0 +1,38 @@
+*** SNOT WORKING PROPERLY YET ***
+
+An unobstrusive SASS compiler/parser for PHP projects.
+
+All of the magic happens in .htaccess!!
+So, ensure that your server have mod_rewrite enabled.
+
+If you want to mix .sass and .css files, don't worry.
+Sass handler will only compile and re-route .sass files.
+
+This script is using pHAMLp libraries, so, it will compile,
+cache, compress and route your CSS code for extra speed and
+less resource consumption.
+
+
+Installation:
+
+Just use this directory as your default assets, sass or css dir.
+For a better organization, you can change the routing at .htaccess
+and paste /lib on your /libraries directory.
+
+
+Usage:
+
+if you have a /src/file.sass, you should look for it on /src/file.css.
+If file.css don't exist, sass handler will compile it for you. If there
+is a file /src/file.css, sass handler will NOT compile anything and will
+be using the existing file.css.
+
+You can also look for /src/file.sass - any HTTP method directing to this
+file will result in an compiled css version of it.
+
+
+any questions?
+iloverafzan@gmail.com
+
+
+HAVE FUN!

@@ -1,0 +1,13 @@
+<IfModule mod_deflate.c>
+	SetOutputFilter DEFLATE
+</IfModule>
+<IfModule mod_rewrite.c> 
+	RewriteEngine	on
+	RewriteCond		%{REQUEST_FILENAME}		!-f
+	RewriteCond 	%{REQUEST_URI}		\.css$
+	#RewriteCond 	%{REQUEST_URI}\.sass$ -f
+	RewriteRule 	^(.*)\.css$	parser.php?file=$1\.sass [NC]
+
+	RewriteCond 	%{REQUEST_URI}		\.sass$
+	RewriteRule 	^(.*)	parser.php?file=$1 [NC]
+</IfModule>
